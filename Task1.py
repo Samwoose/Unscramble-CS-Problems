@@ -30,9 +30,10 @@ def phone_num_adder(phone_num_list, all_records):
     
     return phone_num_list
 
-phone_num_list1 = phone_num_adder(phone_num_list, texts)
-phone_num_list2 = phone_num_adder(phone_num_list1, calls)
+if __name__ == '__main__':
+    phone_num_list1 = phone_num_adder(phone_num_list, texts)
+    phone_num_list2 = phone_num_adder(phone_num_list1, calls)
 
-count = len(phone_num_list2)
+    count = len(phone_num_list2)
 
-print("There are", count, "different telephone numbers in the records.")
+    print("There are", count, "different telephone numbers in the records.")
