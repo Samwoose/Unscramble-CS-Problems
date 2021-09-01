@@ -44,3 +44,44 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+
+def fixedLineChecker(phoneNum):
+  if phoneNum.startswith("("):
+    return True
+  else:
+    return False
+
+def mobileChecker(phoneNum):
+  if phoneNum.find(" "):
+    return True
+  else:
+    return False
+
+if __name__ == '__main__':
+  codeList = []
+  #PartA
+  for i in range(len(calls)):
+    if calls[i][0].startswith("(080)"):
+      if fixedLineChecker(calls[i][1]) == True:
+        #print("code", calls[i][1].split(")")[0])
+        codeList.append(calls[i][1].split(")")[0][1:])
+      elif mobileChecker(calls[i][1]) == True:
+        codeList.append(calls[i][1][0:4])
+  
+  codeList.sort()
+  print("The numbers called by people in Bangalore have codes:")
+  
+  for code in codeList:
+    print(code)
+
+  #PartB
+  codeList2 = []
+  for i in range(len(calls)):
+    if calls[i][0].startswith("(080)"):
+      if calls[i][1].startswith("(080)"):
+        codeList2.append(calls[i][1])
+  
+  #calculate percentage
+  percentage = int(len(codeList2) / len(codeList) * 100)
+
+  print(percentage, "percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
