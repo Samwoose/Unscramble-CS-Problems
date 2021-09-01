@@ -19,21 +19,21 @@ Print a message:
 "There are <count> different telephone numbers in the records."
 """
 count = 0
-phone_num_list = []
+phone_num_set = set()
 
-def phone_num_adder(phone_num_list, all_records):
+def phone_num_adder(all_records):
     num_records = len(all_records)
     #print('current number of records is',num_records)
     for i in range(num_records):
-        if all_records[i][0] not in phone_num_list:
-            phone_num_list.append(all_records[i][0])
+        phone_num_set.add(all_records[i][0])
+        phone_num_set.add(all_records[i][1])
     
-    return phone_num_list
+    #return phone_num_set
 
 if __name__ == '__main__':
-    phone_num_list1 = phone_num_adder(phone_num_list, texts)
-    phone_num_list2 = phone_num_adder(phone_num_list1, calls)
+    phone_num_adder(texts)
+    phone_num_adder(calls)
 
-    count = len(phone_num_list1) + len(phone_num_list2)
+    count = len(phone_num_set)
 
     print("There are", count, "different telephone numbers in the records.")
