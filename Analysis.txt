@@ -1,0 +1,34 @@
+Time Complexity Analysis
+
+-Task0
+Since I have only used access functionality of a list for the task,
+the time it takes doesn't change regardless the number of calls or texts.
+Therefore, its big o notation is O(1).
+
+-Task1
+Since I have used "something in list" approach , which is O(n), inside for-loop, 
+which iterates over n records (i.e. it is also O(n)), its total time complexity
+becomes O(n*n) = O(n^2).
+
+-Task2
+The whole process can be done with one for-loop that has n records. 
+Therefore, its time complexity is O(n).
+
+-Task3
+--PartA
+There are two for-loops which has time complexity of O(n).
+However the sort algorithm's time complexity is O(nLogn) which is slower then O(n).
+Therefore, the time complexity of PartA is O(nLogn).
+
+--PartB
+There is one for-loop in this part which can be done within 
+one iteration that has n records. Therefore, the time complexity of PartB is O(n).
+
+=>If we consider PartA and PartB together, we can say the time complexity of the
+whole process is O(nLogn)
+
+-Task4
+We can pay attention to two for-loops and one sort function. Each for-loop has
+time complexity of O(n) because it is done within n records. 
+However, the sort function has the time complexity of O(nLogn). 
+Therefore, the time complexity of the whole process is O(nLogn).
