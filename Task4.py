@@ -25,3 +25,12 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
+if __name__ == '__main__':
+    telemarketList = []
+    for i in range(len(calls)):
+        if calls[i][0].startswith('140'):
+            telemarketList.append(calls[i][0])
+    telemarketList.sort()
+    print("These numbers could be telemarketers: ")
+    for number in telemarketList:
+        print(number)
