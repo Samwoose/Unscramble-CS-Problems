@@ -20,3 +20,14 @@ Print a message:
 September 2016.".
 """
 
+if __name__ == '__main__':
+    longest_duration = -1
+    temp_phone_num = ""
+    for i in range(len(calls)):
+        temp_duration_int = int(calls[i][3]) 
+        if longest_duration < temp_duration_int:
+            #3 is where the corresponding phone call's duration is stored.
+            longest_duration = temp_duration_int
+            temp_phone_num = calls[i][0]
+    
+    print( temp_phone_num,"spent the longest time,", longest_duration,"seconds, on the phone during September 2016.")
