@@ -21,13 +21,21 @@ September 2016.".
 """
 
 if __name__ == '__main__':
-    longest_duration = -1
-    temp_phone_num = ""
-    for i in range(len(calls)):
-        temp_duration_int = int(calls[i][3]) 
-        if longest_duration < temp_duration_int:
-            #3 is where the corresponding phone call's duration is stored.
-            longest_duration = temp_duration_int
-            temp_phone_num = calls[i][0]
-    
-    print( temp_phone_num,"spent the longest time,", longest_duration,"seconds, on the phone during September 2016.")
+    phone_dict = {}
+    for i in range(len(calls)): 
+
+        #calling
+        if calls[i][0] not in phone_dict.keys():
+            phone_dict[calls[i][0]] = int(calls[i][3])
+        else: 
+            phone_dict[calls[i][0]] = phone_dict[calls[i][0]] + int(calls[i][3])
+        #receiving
+        if calls[i][1] not in phone_dict.keys():
+            phone_dict[calls[i][1]] = int(calls[i][3])
+        else: 
+            phone_dict[calls[i][1]] = phone_dict[calls[i][1]] + int(calls[i][3])
+    #find key with the longest accumlated duration
+    longest_phone_num = max(phone_dict, key=phone_dict.get)
+    longest_duration = phone_dict[longest_phone_num]
+
+    print( longest_phone_num,"spent the longest time,", longest_duration,"seconds, on the phone during September 2016.")
