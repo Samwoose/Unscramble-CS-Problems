@@ -36,4 +36,4 @@ if __name__ == '__main__':
 
     count = len(phone_num_set)
 
-    print("There are", count, "different telephone numbers in the records.")
+    print("There are {} different telephone numbers in the records.".format(count))
