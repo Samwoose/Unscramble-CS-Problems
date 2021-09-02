@@ -26,10 +26,20 @@ The list of numbers should be print out one per line in lexicographic order with
 """
 
 if __name__ == '__main__':
-    telemarketList = []
+    outgoingCalls = set()
+    incomingCallsNOutgoingNIncomingTexts = set()
+    #collect numbers in records
     for i in range(len(calls)):
-        if calls[i][0].startswith('140'):
-            telemarketList.append(calls[i][0])
+        outgoingCalls.add(calls[i][0])
+        incomingCallsNOutgoingNIncomingTexts.add(calls[i][1])
+    for i in range(len(texts)):
+        incomingCallsNOutgoingNIncomingTexts.add(texts[i][0])
+        incomingCallsNOutgoingNIncomingTexts.add(texts[i][1])
+    
+    #subtracting to find the possible telemarketers
+    telemarketSet = outgoingCalls.difference(incomingCallsNOutgoingNIncomingTexts)
+    
+    telemarketList = list(telemarketSet)
     telemarketList.sort()
     print("These numbers could be telemarketers: ")
     for number in telemarketList:
