@@ -1,34 +1,75 @@
 Time Complexity Analysis
 
 -Task0
+Worst case complexity: O(1)
+Algorithm:
+1. Access the first record in text records(complexity:O(1))
+2. Access the last record in call records(complexity:O(1))
+Additional Explanation:
 Since I have only used access functionality of a list for the task,
 the time it takes doesn't change regardless the number of calls or texts.
 Therefore, its big o notation is O(1).
 
 -Task1
-Since I have used "something in list" approach , which is O(n), inside for-loop, 
-which iterates over n records (i.e. it is also O(n)), its total time complexity
-becomes O(n*n) = O(n^2).
+Worst case complexity: O(mn) , average case complexity: O(n)
+Algorithm:
+1. add new item in set(average complexity:O(1), worst complexity:O(m))
+2. for-loop itself(complexity:O(n))
+Additional Explanation:
+Since I have used "something in set" approach , which has O(1) as the average complexity 
+and O(m) as the worst complexity, inside for-loop, 
+which iterates over n records (i.e. it is O(n)), its total time complexity
+becomes O(m*n) = O(mn).
 
 -Task2
-The whole process can be done with one for-loop that has n records. 
-Therefore, its time complexity is O(n).
+Worst case complexity: O(mn)
+Algorithm:
+1. some key in dictionary (average complexity:O(1), worst complexity:O(m)) 
+2. for-loop itself(complexity:O(n))
+3. find max value with key in a dictionary (worst complexity:O(m))
+4. (complexity:)
+5. (complexity:)
+6. (complexity:)
+Additional Explanation:
+There is  'look-up' steps in for-loop. Therefore the time complexity of
+the for-loop including look-up steps would be O(m*n) = O(mn) where m is 
+number of items in current dictionary. 
+At the end, we also perform find-max-value-with-key-in-dictionary that has O(m) of 
+time complexity. However, it has less significant effect than O(mn) in terms of
+time complexity as n gets bigger. Therefore, the worst case time complexity is O(mn)
 
 -Task3
+Worst case complexity: O(nLogn))
+Algorithm:
+1. fixedLineChecker (complexity:O(1))
+2. mobileChecker (complexity:O(1))
+3. first for-loop to append numbers(complexity:O(n))
+4. list to set conversion (complexity:O(m)) where m <= n
+5. set to list conversion (complexity:O(m))
+6. sort list(complexity:O(nLogn))
+7. count item in a list(complexity:O(n))
+Additional Explanation:
 --PartA
 There are two for-loops which has time complexity of O(n).
 However the sort algorithm's time complexity is O(nLogn) which is slower then O(n).
 Therefore, the time complexity of PartA is O(nLogn).
 
 --PartB
-There is one for-loop in this part which can be done within 
-one iteration that has n records. Therefore, the time complexity of PartB is O(n).
+There is a counting procedure in this part which has O(n) of time complexity in the 
+worst case. 
 
 =>If we consider PartA and PartB together, we can say the time complexity of the
 whole process is O(nLogn)
 
 -Task4
-We can pay attention to two for-loops and one sort function. Each for-loop has
-time complexity of O(n) because it is done within n records. 
-However, the sort function has the time complexity of O(nLogn). 
+Worst case complexity: O(nLogn))
+Algorithm:
+1. Collect outcoming numbers in calls (complexity:O(n))
+2. Collect outcoming, incoming numbers in texts (complexity:O(n))
+3. Subtraction of two sets (complexity: (O(len(A))) = O(n) at the worst case)
+4. Set to list conversion (complexity:O(n))
+5. sort list(complexity:O(nLogn))
+6. print for loop (complexity:O(n))
+Additional Explanation:
+Out of all algorithms, the sort list has the worst time complexity. 
 Therefore, the time complexity of the whole process is O(nLogn).
