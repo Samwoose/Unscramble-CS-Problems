@@ -27,9 +27,6 @@ Algorithm:
 1. some key in dictionary (average complexity:O(1), worst complexity:O(m)) 
 2. for-loop itself(complexity:O(n))
 3. find max value with key in a dictionary (worst complexity:O(m))
-4. (complexity:)
-5. (complexity:)
-6. (complexity:)
 Additional Explanation:
 There is  'look-up' steps in for-loop. Therefore the time complexity of
 the for-loop including look-up steps would be O(m*n) = O(mn) where m is 
